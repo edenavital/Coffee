@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      contents="This is an example of a meta description. This will often show u..."
+    />
+    <meta name="viewport" content="width=device=width, initial-scale=1" />
+    <title>Coffee Site</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <div id="loader"></div>
+
+    <div id="content"></div>
+
+    <div id="main-window">
+      <div id="banner">
+        <img
+          src="img/coffee-icon.png"
+          id="scroll-up-icon"
+          class="set-contrast"
+          alt="coffee-icon"
+        />
+
+        <nav id="nav-banner" class="set-contrast">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="beans.html">Coffee Beans</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <img src="img/logo.png" class="set-contrast" alt="logo" />
+    </div>
+
+    <div id="footer">
+      <div id="footer-top">
+        <img
+          src="img/coffee-cup-left.png"
+          width="50px"
+          height="50px"
+          alt="coffee-icon"
+        />
+        <h2 class="set-contrast">STAY IN TOUCH</h2>
+        <img
+          src="img/coffee-cup-right.png"
+          width="50px"
+          height="50px"
+          alt="coffee-icon"
+        />
+      </div>
+
+      <div id="footer-bottom">
+        <div id="left-footer-bottom-div">
+          <h6 class="set-contrast">Find Me</h6>
+          <div>
+            <a href="https://www.google.com"
+              ><img
+                src="img/facebook.png"
+                width="35px"
+                height="35px"
+                alt="social-icon"
+            /></a>
+            <img
+              src="img/twitter.png"
+              width="35px"
+              height="35px"
+              alt="social-icon"
+            />
+            <a href="https://www.linkedin.com/in/edenavital/"
+              ><img
+                src="img/linkdin.png"
+                width="35px"
+                height="35px"
+                alt="social-icon"
+            /></a>
+            <img
+              src="img/youtube.png"
+              width="35px"
+              height="35px"
+              alt="social-icon"
+            />
+            <img
+              src="img/gps.png"
+              width="35px"
+              height="35px"
+              alt="social-icon"
+            />
+          </div>
+        </div>
+        <div id="mid-footer-bottom-div">
+          <h6 class="set-contrast">Made By <br /></h6>
+          <a href="mailto:edendor@gmail.com">Eden Avital</a>
+        </div>
+
+        <div id="right-footer-bottom-div">
+          <h6 class="set-contrast">Subscribe to our newsletter</h6>
+          <a href="#" id="subscribe-btn" class="myButton">Get Started</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="bg-modal">
+      <div id="modal-window">
+        <div id="close-btn">+</div>
+
+        <div id="text-before-submit">
+          <h2>Join Our Newsletter</h2>
+          <p>Be the first to know about new popular coffee beans</p>
+        </div>
+
+        <img src="img/thinkCoffee.png" alt="thinking-on-coffee" />
+
+        <form
+          id="subscribe-form"
+          action="javascript:;"
+          onsubmit="submitSubscribe()"
+        >
+          <input
+            type="text"
+            name="name"
+            placeholder="Name*"
+            autocomplete="off"
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email*"
+            autocomplete="off"
+            required
+          />
+          <input class="myButton input-submit" type="submit" value="Submit" />
+        </form>
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="This is an example of a meta description. This will often show u..."
+    />
+    <meta name="viewport" content="width=device=width, initial-scale=1" />
+    <title>Coffee Site</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <div id="loader"></div>
+    <div id="content"></div>
+
+    <div id="about-content-bg-one">
+      <div id="banner">
+        <img
+          src="img/coffee-icon.png"
+          id="scroll-up-icon"
+          class="set-contrast"
+          alt="coffee-icon"
+        />
+
+        <nav id="nav-banner" class="set-contrast">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="beans.html">Coffee Beans</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div id="content-about-one">
+        <h1 class="letter-space">About Me</h1>
+        <p>
+          We are all very different. <br />We were born in different cities, at
+          different times, we love different music, food, movies. <br />But we
+          have something that unites us all. <br />
+        </p>
+
+        <h1 class="line-1 anim-typewriter">IT IS COFFEE.</h1>
+      </div>
+    </div>
+
+    <div id="about-content-bg-two"></div>
+
+    <div id="about-content-bg-three">
+      <div id="content-about-three">
+        <div class="content-about-three-divs">
+          <img
+            class="content-about-three-svg about-img"
+            src="./img/svg/love.svg"
+            alt="love icon"
+          />
+          <h2 class="svg-title">Love</h2>
+          <p>Sharing information about my favorite coffee beans.</p>
+        </div>
+        <div class="content-about-three-divs">
+          <img
+            class="content-about-three-svg about-img"
+            src="./img/svg/worldwide.svg"
+            alt="world icon"
+          />
+          <h2 class="svg-title">Worldwide</h2>
+          <p>Information about coffee beans from around the world.</p>
+        </div>
+
+        <div class="content-about-three-divs">
+          <img
+            class="content-about-three-svg about-img"
+            src="./img/svg/support.svg"
+            alt="world icon"
+          />
+          <h2 class="svg-title">Support</h2>
+          <p>
+            Have a question?<br />
+            Feel free to send me a message.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div id="about-me">
+      <div id="about-me-text">
+        <h1>About Me</h1>
+        <p>
+          Hello there, My name is Eden, and I'm a front-end developer who loves
+          to write beautiful code.
+        </p>
+        <p>
+          I am very interested in variety of programming languages and
+          technologies.<br />
+          I have always been fascinated with computers since ever I can
+          remember.<br />
+          I spend most of my spare time learning new things related to
+          programming & developing my own projects.
+        </p>
+
+        <p>
+          Contact:<br />
+          Tel: 054-7536-835<br />
+          Email: edendor@gmail.com
+        </p>
+      </div>
+
+      <div id="about-me-img">
+        <img src=".\img\Eden.jpg" alt="Eden" class="about-img" />
+      </div>
+    </div>
+
+    <div id="footer">
+      <div id="footer-top">
+        <img
+          src="img/coffee-cup-left.png"
+          width="50px"
+          height="50px"
+          alt="coffee-icon"
+        />
+        <h2 class="set-contrast">STAY IN TOUCH</h2>
+        <img
+          src="img/coffee-cup-right.png"
+          width="50px"
+          height="50px"
+          alt="coffee-icon"
+        />
+      </div>
+
+      <div id="footer-bottom">
+        <div id="left-footer-bottom-div">
+          <h6 class="set-contrast">Find Me</h6>
+          <div>
+            <img
+              class="lala"
+              src="img/facebook.png"
+              width="35px"
+              height="35px"
+              alt="social-icon"
+            />
+            <img
+              src="img/twitter.png"
+              width="35px"
+              height="35px"
+              alt="social-icon"
+            />
+            <img
+              src="img/linkdin.png"
+              width="35px"
+              height="35px"
+              alt="social-icon"
+            />
+            <img
+              src="img/youtube.png"
+              width="35px"
+              height="35px"
+              alt="social-icon"
+            />
+            <img
+              src="img/gps.png"
+              width="35px"
+              height="35px"
+              alt="social-icon"
+            />
+          </div>
+        </div>
+
+        <div id="mid-footer-bottom-div">
+          <h6 class="set-contrast">Made By <br /></h6>
+          <a href="mailto:edendor@gmail.com">Eden Avital</a>
+        </div>
+
+        <div id="right-footer-bottom-div">
+          <h6 class="set-contrast">Subscribe to our newsletter</h6>
+          <a href="#" id="subscribe-btn" class="myButton">Get Started</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="bg-modal">
+      <div id="modal-window">
+        <div id="close-btn">+</div>
+
+        <div id="text-before-submit">
+          <h2>Join Our Newsletter</h2>
+          <p>Be the first to know about new popular coffee beans</p>
+        </div>
+
+        <img src="img/thinkCoffee.png" alt="thinking-on-coffee" />
+        <form
+          id="subscribe-form"
+          action="javascript:;"
+          onsubmit="submitSubscribe()"
+        >
+          <input
+            type="text"
+            name="name"
+            placeholder="Name*"
+            autocomplete="off"
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email*"
+            autocomplete="off"
+            required
+          />
+          <input class="myButton input-submit" type="submit" value="Submit" />
+        </form>
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

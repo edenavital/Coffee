@@ -1,0 +1,775 @@
+/*
+TODO:
+  #CAREFUL WITH GIT! GOT FKED HARD
+  #After ending the index page - create the next html pages
+  #Learn how to make page transitions
+  #Learn how to create a loading screen
+  #Once a user clicks on the Get Started Button, a pop up window appears  with opacity transition - EMAIL INPUT
+*/
+body {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  font-family: sans-serif;
+}
+h2 {
+  padding: 0px;
+  margin: 0px;
+}
+
+#loader {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: visible;
+  background: #270b01 url("../img/svg/loader.svg") no-repeat center center;
+}
+
+.set-contrast {
+  filter: contrast(90%);
+}
+
+#main-window {
+  /*/C:/Users/Eden-PC/Desktop/Programming/JavaScript/CoffeJunkie*/
+  background-image: url("../img/coffee-wallpaper.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: overlay;
+
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+#banner {
+  width: 100vw;
+  height: 80px;
+  /*Using alpha hex color instead of opacity 0.8 - so the child's won't have opacity as well*/
+  background-color: #270b01cc;
+  position: fixed;
+  z-index: 1;
+  top: 0px;
+  color: white;
+}
+
+#scroll-up-icon {
+  width: 55px;
+  height: 55px;
+  margin: 12px 0px 0px 12px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+#scroll-up-icon:hover {
+  transform: scale(1.25);
+}
+
+#nav-banner {
+  position: absolute;
+  right: 0px;
+  top: 40px;
+  transform: translate(-10%, -50%);
+}
+
+#nav-banner ul {
+  display: flex;
+}
+
+#nav-banner ul li {
+  list-style-type: none;
+  margin: 0 20px;
+  transition: 0.5s;
+}
+
+#nav-banner ul li a {
+  display: block;
+  position: relative;
+  padding: 5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #f1f1f1;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+#nav-banner ul:hover li a {
+  transform: scale(1.5);
+  opacity: 0.2;
+  filter: blur(5px);
+}
+
+#nav-banner ul li a:hover {
+  transform: scale(2);
+  opacity: 1;
+  filter: blur(0px);
+}
+
+#nav-banner ul li a:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f49b42;
+  transition: transform 0.5s;
+  transform-origin: right;
+  transform: scaleX(0);
+  z-index: -1;
+}
+
+#nav-banner ul li a:hover:before {
+  transition: transform 0.5s;
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+/* > sign = Selects the <img> element where the parent is main-window - compared to #main-window img - which affects all the child's*/
+#main-window > img {
+  width: 80%;
+  display: block;
+  margin: 0 auto;
+  padding-top: 70px;
+  animation: elementEntrance 1s ease 1 forwards;
+}
+
+@keyframes elementEntrance {
+  0% {
+    opacity: 0;
+    transform: translate(0px, -100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+}
+
+@keyframes elementDisappearance {
+  0% {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(0px, 30px);
+  }
+}
+
+@keyframes elementDisappearanceModal {
+  0% {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(0px, 100px);
+  }
+}
+
+@keyframes contactScale {
+  100% {
+    height: 74px;
+  }
+}
+
+#footer {
+  display: block;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 200px;
+  padding: 1rem;
+  background-color: #270b01;
+  font-family: Poppins;
+  color: #f2f2f2;
+}
+
+#footer-top {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+#footer-top h2 {
+  font-size: 32px;
+  margin: 10px 20px 0px 22px;
+  font-weight: 200;
+  letter-spacing: 10px;
+}
+
+#footer-bottom {
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  text-align: center;
+}
+
+#footer-bottom h6 {
+  margin: 10px;
+  padding: 5px;
+  font-size: 18px;
+  font-weight: 150;
+}
+
+#footer-bottom a {
+  color: #973903;
+}
+
+#left-footer-bottom-div {
+  width: 250px;
+  margin-right: 50px;
+  /* h6 display = block, which means it takes the whole row, flex is unnecessary
+  display: flex;
+  flex-direction: column;*/
+}
+
+#left-footer-bottom-div img {
+  margin: 0px 10px 10px 0px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+#left-footer-bottom-div img:hover {
+  transform: scale(1.5);
+  transition: 0.3s;
+}
+
+/*
+.social-off{
+  margin: 0px 8px 10px 0px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.social-on{
+  margin: 0px 8px 10px 0px;
+  transition: 0.3s;
+  cursor: pointer;
+  transform: scale(1.5);
+  transition: 0.3s;
+}*/
+
+#mid-footer-bottom-div {
+  width: 250px;
+  margin-right: 50px;
+}
+#mid-footer-bottom-div a {
+  color: #973903;
+  transition: 0.3s;
+}
+
+#mid-footer-bottom-div a:hover {
+  color: #c54704;
+  transition: 0.3s;
+}
+
+#right-footer-bottom-div {
+  width: 300px;
+  margin-right: 50px;
+}
+
+.myButton {
+  width: 200px;
+  margin-bottom: 15px;
+  -moz-box-shadow: 0px 10px 14px -7px #276873;
+  -webkit-box-shadow: 0px 10px 14px -7px #276873;
+  box-shadow: 0px 10px 14px -7px black;
+  background-color: #973903;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  border: 1px solid #973903;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff !important;
+  padding: 10px 50px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #3d768a;
+  transition: 0.3s;
+  outline: none;
+}
+.myButton:hover {
+  background-color: #c54704;
+  transition: 0.3s;
+}
+.myButton:active {
+  position: relative;
+  top: 2px;
+}
+
+/*Setting the subscribe modal pop up*/
+#bg-modal {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: Poppins;
+  display: none;
+  animation: fadeIn 1s 1;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+#modal-window {
+  width: 500px;
+  height: 400px;
+  background-color: #f1f1f1;
+  border-radius: 4px;
+  padding: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#close-btn {
+  position: absolute;
+  top: 0;
+  right: 14px;
+  font-size: 42px;
+  transform: rotate(45deg);
+  cursor: pointer;
+}
+
+#text-before-submit {
+  margin-bottom: 10px;
+  width: 450px;
+}
+
+#text-before-submit h2 {
+  margin-bottom: 5px;
+  display: hidden;
+}
+
+#modal-window img {
+  width: 100px;
+  height: 90px;
+}
+
+input,
+textarea {
+  width: 250px;
+  display: block;
+  margin: 10px auto;
+  padding: 5px;
+  font-family: Poppins;
+  font-size: 15px;
+  transition: border 0.5s;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+input:focus,
+textarea:focus {
+  border: 3px solid #555;
+}
+.input-submit {
+  width: 300px;
+  height: 50px;
+  font-size: 20px;
+  border: none;
+}
+.input-submit:focus {
+  border: none;
+}
+
+/*Contact.html*/
+#main-window-contact {
+  background-image: url("../img/cup-of-coffee-contact.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: overlay;
+
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  font-family: Poppins;
+}
+#content-contact {
+  position: relative;
+  width: 700px;
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 0 auto;
+  top: 120px;
+  border: 2px solid brown;
+  border-radius: 5px;
+  color: white;
+  background-color: rgba(38, 8, 1, 0.8);
+  animation: elementEntrance 1s ease 1 forwards;
+  color: #f1f1f1;
+}
+
+#content-contact h1 {
+  margin: 13px;
+}
+
+#content-contact p {
+  margin-top: 0;
+}
+
+#message {
+  width: 470px;
+  height: 70px;
+  padding: 5px;
+  min-height: 70px;
+  max-height: 120px;
+  resize: vertical;
+}
+
+/*About.html*/
+
+#about-content-bg-one {
+  background: linear-gradient(
+    0deg,
+    rgba(241, 241, 241, 1) 20%,
+    rgba(201, 88, 0, 1) 100%
+  );
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  font-family: Poppins;
+}
+
+#content-about-one {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #f1f1f1;
+  width: 750px;
+  height: 300px;
+  margin: 0 auto;
+  padding-top: 100px;
+  animation: elementEntrance 1s ease 1 forwards;
+}
+
+#content-about-one p {
+  font-size: 19px;
+  padding: 0px 10px;
+}
+
+/* Google Font */
+@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+
+.line-1 {
+  font-family: "Anonymous Pro", monospace;
+  font-size: 50px;
+  position: relative;
+  color: brown;
+  overflow: hidden;
+  width: 200px;
+  margin: 0 auto;
+  border-right: 2px solid orange;
+  text-align: center;
+  white-space: nowrap;
+  letter-spacing: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  cursor: default;
+}
+
+.anim-typewriter {
+  animation: typewriter 3s steps(18) 1s 1 normal both,
+    blinkTextCursor 850ms steps(22) infinite normal;
+  animation-delay: 5s;
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 500px;
+  }
+}
+@keyframes blinkTextCursor {
+  0% {
+    opacity: 1;
+    border-right-color: rgb(201, 88, 0);
+  }
+  100% {
+    opacity: 1;
+    border-right-color: transparent;
+  }
+}
+
+#about-content-bg-two {
+  background-image: url("../img/cup_coffee_plates.jpg");
+  background-repeat: no-repeat;
+  background-size: 100vw 70vh;
+  background-position: 50% 20%;
+  border-top: 3px solid orange;
+  border-bottom: 3px solid orange;
+  background-blend-mode: overlay;
+  width: 100vw;
+  height: 40vh;
+}
+
+#about-content-bg-three {
+  width: 100vw;
+  height: 50vh;
+  background-color: #f2f2f2;
+}
+
+.content-about-three-divs {
+  width: 300px;
+  margin-right: 80px;
+}
+.content-about-three-svg {
+  width: 120px;
+  height: 120px;
+  opacity: 0;
+}
+.content-about-three-titles {
+  margin-top: 15px;
+}
+
+#content-about-three {
+  font-family: Poppins;
+  padding: 80px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}
+
+#about-me {
+  width: 100vw;
+  height: 80vh;
+  background: linear-gradient(
+    0deg,
+    rgba(201, 88, 0, 1) 20%,
+    rgba(241, 241, 241, 1) 100%
+  );
+  font-family: Poppins;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#about-me-text {
+  margin: 100px;
+  width: 450px;
+  font-size: 20px;
+}
+
+#about-me-text h1 {
+  margin: 0px;
+}
+
+#about-me-img img {
+  filter: contrast(110%);
+  filter: brightness(110%);
+  width: 550px;
+  height: 550px;
+  border-radius: 300px;
+  border: 3px solid orange;
+  opacity: 0;
+}
+/*Make the nav fixed when scrolling with a small animation.
+Change the navigation bar animations already...
+In the footer, change the "made by" to something else...
+think about what to do with the social icons... facebook....twitter...
+Make more classes and delete unneeded ids! classes are better for less code repeating!
+*/
+
+/*coffee.html*/
+
+#beans-bg {
+  /*/C:/Users/Eden-PC/Desktop/Programming/JavaScript/CoffeJunkie*/
+  background-image: url("../img/beans-background.jpg");
+  background-repeat: no-repeat;
+  /*Play with the position to your benefit*/
+  background-position: 50%;
+  background-size: cover;
+  background-blend-mode: overlay;
+  width: 100vw;
+  height: 400vh;
+  position: relative;
+  font-family: Poppins;
+  color: #f1f1f1;
+}
+
+#beans-introduction {
+  text-align: center;
+  color: #f1f1f1;
+  width: 750px;
+  height: 300px;
+  margin: 0 auto 50px auto;
+  padding-top: 100px;
+  animation: elementEntrance 1s ease 1 forwards;
+}
+
+.beans-color {
+  color: blanchedalmond;
+}
+
+.letter-space {
+  letter-spacing: 5px;
+}
+
+#table-scroll {
+  text-align: center;
+  color: #f1f1f1;
+  animation: elementEntrance 1s ease 1 forwards;
+}
+
+#table-scroll ul {
+  display: flex;
+  flex-direction: column;
+}
+
+#table-scroll ul li {
+  list-style-type: none;
+  margin: 0 20px;
+  transition: 0.5s;
+}
+
+#table-scroll ul li a {
+  display: block;
+  position: relative;
+  padding: 5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #f1f1f1;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+#table-scroll ul:hover li a {
+  transform: scale(1.5);
+  opacity: 0.2;
+  filter: blur(5px);
+}
+
+#table-scroll ul li a:hover {
+  transform: scale(2);
+  opacity: 1;
+  filter: blur(0px);
+}
+
+#table-scroll ul li a:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f49b42;
+  transition: transform 0.5s;
+  transform-origin: right;
+  transform: scaleX(0);
+  z-index: -1;
+}
+
+#table-scroll ul li a:hover:before {
+  transition: transform 0.5s;
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+/*Make all the next coffes as classes... cause you gonna use them again and again for each coffee bean!*/
+.coffee-container {
+  color: #f1f1f1;
+  height: 60vh;
+  font-family: Poppins;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 50px;
+  color: #f1f1f1;
+  border-radius: 30px;
+  background: #f12711; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to left,
+    #f5af19,
+    #f12711
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to left,
+    transparent,
+    #ffaf00
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.test {
+  opacity: 1;
+}
+
+.coffee-text {
+  margin-right: 100px;
+  width: 50%;
+}
+
+.coffee-title {
+  margin: 0px;
+}
+
+.coffee-img {
+  width: 400px;
+  height: 550px;
+  border-radius: 15px;
+  opacity: 0;
+}
+
+.coffee-specs {
+  display: flex;
+  flex-direction: row;
+  width: 300px;
+  justify-content: space-between;
+}
+
+.coffee-specs-categories p,
+.coffee-specs-values p {
+  padding: 0px;
+  margin: 0px;
+}
+
+.right-to-left {
+  background: #f12711; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #f5af19,
+    #f12711
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    transparent,
+    #ffaf00
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+/*Change coffee => coffee!
+Continue Coffee Beans site
+Add shadow to the images in beans.html*/
