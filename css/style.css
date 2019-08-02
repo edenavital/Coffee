@@ -73,41 +73,28 @@ h2 {
   top: 40px;
   transform: translate(-10%, -50%);
 }
-
-#nav-banner ul {
+/*css for any ul*/
+ul {
   display: flex;
 }
 
-#nav-banner ul li {
+ul li {
   list-style-type: none;
   margin: 0 20px;
-  transition: 0.5s;
+  transition: 0.3s;
 }
 
-#nav-banner ul li a {
+ul li a {
   display: block;
   position: relative;
-  padding: 5px;
+  padding: 10px;
   text-transform: uppercase;
   text-decoration: none;
   color: #f1f1f1;
   font-size: 18px;
-  transition: 0.3s;
 }
 
-#nav-banner ul:hover li a {
-  transform: scale(1.5);
-  opacity: 0.2;
-  filter: blur(5px);
-}
-
-#nav-banner ul li a:hover {
-  transform: scale(2);
-  opacity: 1;
-  filter: blur(0px);
-}
-
-#nav-banner ul li a:before {
+ul li a:before {
   content: "";
   position: absolute;
   top: 0;
@@ -115,15 +102,16 @@ h2 {
   width: 100%;
   height: 100%;
   background: #f49b42;
-  transition: transform 0.5s;
-  transform-origin: right;
+  transition: transform 0.3s;
+  transform-origin: center;
   transform: scaleX(0);
   z-index: -1;
+  border-radius: 50px;
 }
 
-#nav-banner ul li a:hover:before {
-  transition: transform 0.5s;
-  transform-origin: left;
+ul li a:hover:before {
+  transition: transform 0.3s;
+  transform-origin: center;
   transform: scaleX(1);
 }
 
@@ -615,7 +603,7 @@ Make more classes and delete unneeded ids! classes are better for less code repe
   background-size: cover;
   background-blend-mode: overlay;
   width: 100vw;
-  height: 400vh;
+  height: 410vh;
   position: relative;
   font-family: Poppins;
   color: #f1f1f1;
@@ -623,7 +611,6 @@ Make more classes and delete unneeded ids! classes are better for less code repe
 
 #beans-introduction {
   text-align: center;
-  color: #f1f1f1;
   width: 750px;
   height: 300px;
   margin: 0 auto 50px auto;
@@ -641,7 +628,6 @@ Make more classes and delete unneeded ids! classes are better for less code repe
 
 #table-scroll {
   text-align: center;
-  color: #f1f1f1;
   animation: elementEntrance 1s ease 1 forwards;
 }
 
@@ -651,22 +637,13 @@ Make more classes and delete unneeded ids! classes are better for less code repe
 }
 
 #table-scroll ul li {
-  list-style-type: none;
-  margin: 0 20px;
-  transition: 0.5s;
+  padding: 10px;
 }
 
 #table-scroll ul li a {
-  display: block;
-  position: relative;
-  padding: 5px;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: #f1f1f1;
-  font-size: 18px;
-  transition: 0.3s;
+  display: inline;
 }
-
+/*
 #table-scroll ul:hover li a {
   transform: scale(1.5);
   opacity: 0.2;
@@ -697,7 +674,7 @@ Make more classes and delete unneeded ids! classes are better for less code repe
   transition: transform 0.5s;
   transform-origin: left;
   transform: scaleX(1);
-}
+}*/
 
 /*Make all the next coffes as classes... cause you gonna use them again and again for each coffee bean!*/
 .coffee-container {
@@ -770,6 +747,4 @@ Make more classes and delete unneeded ids! classes are better for less code repe
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-/*Change coffee => coffee!
-Continue Coffee Beans site
-Add shadow to the images in beans.html*/
+/*Add shadow to the images in beans.html*/
