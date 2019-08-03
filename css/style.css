@@ -1,10 +1,9 @@
 /*
 TODO:
-  #CAREFUL WITH GIT! GOT FKED HARD
-  #After ending the index page - create the next html pages
   #Learn how to make page transitions
-  #Learn how to create a loading screen
-  #Once a user clicks on the Get Started Button, a pop up window appears  with opacity transition - EMAIL INPUT
+  #The index page's banner is slightly bigger than the others somehow...
+  #when opening the modal pop up, the navigation bar is still available for clicks...
+  
 */
 body {
   margin: 0px;
@@ -17,7 +16,6 @@ h2 {
   padding: 0px;
   margin: 0px;
 }
-
 #loader {
   position: fixed;
   width: 100%;
@@ -32,13 +30,11 @@ h2 {
 }
 
 #main-window {
-  /*/C:/Users/Eden-PC/Desktop/Programming/JavaScript/CoffeJunkie*/
   background-image: url("../img/coffee-wallpaper.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   background-blend-mode: overlay;
-
   width: 100vw;
   height: 100vh;
   position: relative;
@@ -642,41 +638,9 @@ Make more classes and delete unneeded ids! classes are better for less code repe
 
 #table-scroll ul li a {
   display: inline;
-}
-/*
-#table-scroll ul:hover li a {
-  transform: scale(1.5);
-  opacity: 0.2;
-  filter: blur(5px);
+  cursor: pointer;
 }
 
-#table-scroll ul li a:hover {
-  transform: scale(2);
-  opacity: 1;
-  filter: blur(0px);
-}
-
-#table-scroll ul li a:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #f49b42;
-  transition: transform 0.5s;
-  transform-origin: right;
-  transform: scaleX(0);
-  z-index: -1;
-}
-
-#table-scroll ul li a:hover:before {
-  transition: transform 0.5s;
-  transform-origin: left;
-  transform: scaleX(1);
-}*/
-
-/*Make all the next coffes as classes... cause you gonna use them again and again for each coffee bean!*/
 .coffee-container {
   color: #f1f1f1;
   height: 60vh;
@@ -698,10 +662,6 @@ Make more classes and delete unneeded ids! classes are better for less code repe
     transparent,
     #ffaf00
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-
-.test {
-  opacity: 1;
 }
 
 .coffee-text {

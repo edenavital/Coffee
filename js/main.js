@@ -122,7 +122,7 @@ function submitContactForm() {
   //Use the "after submit" function with the same text from the Modal Pop Up"
 }
 
-//Scroll to the top of the page button. (Modify the icon appearance...)
+//Scroll to the top of the page button.
 const up = document.querySelector("#scroll-up-icon");
 up.addEventListener("click", () => {
   window.scrollTo({
@@ -137,7 +137,6 @@ up.addEventListener("click", () => {
 //Debounce - the function will run less times per 1 scroll
 
 function debounce(func, wait = 5, immediate = true) {
-  console.log("TCL: debounce -> debounce", debounce);
   var timeout;
   return function() {
     var context = this,
@@ -153,12 +152,11 @@ function debounce(func, wait = 5, immediate = true) {
   };
 }
 
-//Running the functions only on the specified images
+//Running the function only on specified images
 const sliderImages = document.querySelectorAll(".coffee-img, .about-img");
 
 //Once the image is peaking, reveal it
 function checkslide(e) {
-  console.count(e);
   sliderImages.forEach(sliderImage => {
     // Half way through the image
     const slideInAt =
@@ -174,3 +172,56 @@ function checkslide(e) {
 }
 
 window.addEventListener("scroll", debounce(checkslide));
+
+//Smooth scroll
+
+function smoothScroll(target, duration) {
+  var target = document.querySelector(target);
+  var targetPosition = target.getBoundingClientRect().top - 100;
+  var startPosition = window.pageYOffset;
+  var distance = targetPosition - startPosition;
+  var startTime = null;
+
+  function animation(currentTime) {
+    if (startTime === null) {
+      startTime = currentTime;
+    }
+    var timeElapsed = currentTime - startTime;
+    var run = ease(timeElapsed, startPosition, distance, duration);
+    window.scrollTo(0, run);
+    if (timeElapsed < duration) {
+      requestAnimationFrame(animation);
+    }
+  }
+
+  function ease(t, b, c, d) {
+    t /= d / 2;
+    if (t < 1) return (c / 2) * t * t + b;
+    t--;
+    return (-c / 2) * (t * (t - 2) - 1) + b;
+  }
+
+  requestAnimationFrame(animation);
+}
+
+var sections = document.querySelectorAll("#table-scroll ul li a");
+
+sections[0].addEventListener("click", function() {
+  smoothScroll("#section0", 1000);
+});
+
+sections[1].addEventListener("click", function() {
+  smoothScroll("#section1", 1000);
+});
+
+sections[2].addEventListener("click", function() {
+  smoothScroll("#section2", 1000);
+});
+
+sections[3].addEventListener("click", function() {
+  smoothScroll("#section3", 1000);
+});
+
+sections[4].addEventListener("click", function() {
+  smoothScroll("#section4", 1000);
+});
