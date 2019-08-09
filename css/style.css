@@ -29,7 +29,7 @@ h2 {
   filter: contrast(90%);
 }
 
-#main-window {
+#main-window-index {
   background-image: url("../img/coffee-wallpaper.jpg");
   background-repeat: no-repeat;
   background-position: center;
@@ -68,6 +68,7 @@ h2 {
   right: 0px;
   top: 40px;
   transform: translate(-10%, -50%);
+  font-family: Poppins;
 }
 /*css for any ul*/
 ul {
@@ -111,8 +112,8 @@ ul li a:hover:before {
   transform: scaleX(1);
 }
 
-/* > sign = Selects the <img> element where the parent is main-window - compared to #main-window img - which affects all the child's*/
-#main-window > img {
+/* > sign = Selects the <img> element where the parent is main-window-index - compared to #main-window-index img - which affects all the child's*/
+#main-window-index > img {
   width: 80%;
   display: block;
   margin: 0 auto;
@@ -581,15 +582,8 @@ textarea:focus {
   border: 3px solid orange;
   opacity: 0;
 }
-/*Make the nav fixed when scrolling with a small animation.
-Change the navigation bar animations already...
-In the footer, change the "made by" to something else...
-think about what to do with the social icons... facebook....twitter...
-Make more classes and delete unneeded ids! classes are better for less code repeating!
-*/
 
 /*coffee.html*/
-
 #beans-bg {
   /*/C:/Users/Eden-PC/Desktop/Programming/JavaScript/CoffeJunkie*/
   background-image: url("../img/beans-background.jpg");
@@ -708,4 +702,8 @@ Make more classes and delete unneeded ids! classes are better for less code repe
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-/*Add shadow to the images in beans.html*/
+/*Add shadow to the images in beans.html
+In the footer, change the "made by" to something else...
+think about what to do with the social icons... facebook....twitter...
+Make more classes and delete unneeded ids! classes are better for less code repeating!
+*/
