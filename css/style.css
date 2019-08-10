@@ -207,9 +207,6 @@ ul li a:hover:before {
 #left-footer-bottom-div {
   width: 250px;
   margin-right: 50px;
-  /* h6 display = block, which means it takes the whole row, flex is unnecessary
-  display: flex;
-  flex-direction: column;*/
 }
 
 #left-footer-bottom-div img {
@@ -222,20 +219,6 @@ ul li a:hover:before {
   transform: scale(1.5);
   transition: 0.3s;
 }
-
-/*
-.social-off{
-  margin: 0px 8px 10px 0px;
-  transition: 0.3s;
-  cursor: pointer;
-}
-.social-on{
-  margin: 0px 8px 10px 0px;
-  transition: 0.3s;
-  cursor: pointer;
-  transform: scale(1.5);
-  transition: 0.3s;
-}*/
 
 #mid-footer-bottom-div {
   width: 250px;
@@ -385,6 +368,7 @@ textarea:focus {
 }
 
 /*Contact.html*/
+
 #main-window-contact {
   background-image: url("../img/cup-of-coffee-contact.jpg");
   background-repeat: no-repeat;
@@ -584,11 +568,10 @@ textarea:focus {
 }
 
 /*coffee.html*/
+
 #beans-bg {
-  /*/C:/Users/Eden-PC/Desktop/Programming/JavaScript/CoffeJunkie*/
   background-image: url("../img/beans-background.jpg");
   background-repeat: no-repeat;
-  /*Play with the position to your benefit*/
   background-position: 50%;
   background-size: cover;
   background-blend-mode: overlay;
@@ -619,6 +602,15 @@ textarea:focus {
 #table-scroll {
   text-align: center;
   animation: elementEntrance 1s ease 1 forwards;
+  width: 40%;
+  margin: 0 auto;
+  background-image: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgba(226, 193, 232, 0.2) 14.3%,
+    rgba(229, 197, 156, 0.2) 63.7%
+  );
+  border-radius: 10px 120px 10px 120px;
+  padding: 15px;
 }
 
 #table-scroll ul {
@@ -636,14 +628,12 @@ textarea:focus {
 }
 
 .coffee-container {
-  color: #f1f1f1;
   height: 60vh;
   font-family: Poppins;
   display: flex;
   justify-content: space-around;
   align-items: center;
   margin: 50px;
-  color: #f1f1f1;
   border-radius: 30px;
   background: #f12711; /* fallback for old browsers */
   background: -webkit-linear-gradient(
@@ -702,8 +692,9 @@ textarea:focus {
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-/*Add shadow to the images in beans.html
-In the footer, change the "made by" to something else...
+/*TODO:
+
+
 think about what to do with the social icons... facebook....twitter...
 Make more classes and delete unneeded ids! classes are better for less code repeating!
 */

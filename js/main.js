@@ -203,7 +203,7 @@ function smoothScroll(target, duration) {
 
   requestAnimationFrame(animation);
 }
-
+/*Optimize the sections, so instead of declaring each one of them, try to sections.forEach*/
 var sections = document.querySelectorAll("#table-scroll ul li a");
 
 sections[0].addEventListener("click", function() {
