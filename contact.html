@@ -16,8 +16,19 @@
   </head>
 
   <body>
-    <div id="loader"></div>
+    <div id="notfound">
+      <div class="notfound">
+        <div class="notfound-404">
+          <h3>Oops! App is not responsive</h3>
+          <h1><span>4</span><span>0</span><span>4</span></h1>
+        </div>
+        <h2>
+          Sorry, but the application is not responsive, please enter through PC
+        </h2>
+      </div>
+    </div>
 
+    <div id="loader"></div>
     <div id="content"></div>
 
     <div id="main-window-contact">
@@ -47,11 +58,7 @@
           as possible.
         </p>
 
-        <form
-          id="contact-form"
-          action="javascript:;"
-          onsubmit="submitContactForm()"
-        >
+        <form name="contact-form" netlify method="POST" id="contact-form">
           <input
             type="text"
             name="name"
@@ -74,7 +81,6 @@
           />
 
           <textarea
-            form="contact-form"
             id="message"
             rows="4"
             cols="50"

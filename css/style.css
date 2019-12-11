@@ -1,10 +1,82 @@
-/*
-TODO:
-  #Learn how to make page transitions
-  #The index page's banner is slightly bigger than the others somehow...
-  #when opening the modal pop up, the navigation bar is still available for clicks...
-  
-*/
+/*Display page not found when using phones*/
+
+#notfound > * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#notfound {
+  animation: elementEntrance 1s forwards;
+  display: none;
+  position: relative;
+  height: 100vh;
+  z-index: 1000;
+}
+
+#notfound .notfound {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.notfound {
+  max-width: 520px;
+  width: 100%;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.notfound .notfound-404 {
+  position: relative;
+  height: 240px;
+}
+
+.notfound .notfound-404 h1 {
+  font-family: "Montserrat", sans-serif;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  font-size: 200px;
+  font-weight: 900;
+  margin: 0px;
+  color: #262626;
+  text-transform: uppercase;
+  letter-spacing: -40px;
+  margin-left: -20px;
+}
+
+.notfound .notfound-404 h1 > span {
+  text-shadow: -8px 0px 0px #fff;
+}
+
+.notfound .notfound-404 h3 {
+  font-family: "Cabin", sans-serif;
+  position: relative;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #262626;
+  margin: 0px;
+  letter-spacing: 3px;
+  padding-left: 6px;
+}
+
+.notfound h2 {
+  font-family: "Cabin", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #000;
+  margin-top: 0px;
+  margin-bottom: 25px;
+}
+
 body {
   margin: 0px;
   padding: 0px;
@@ -471,7 +543,7 @@ textarea:focus {
 .anim-typewriter {
   animation: typewriter 3s steps(18) 1s 1 normal both,
     blinkTextCursor 850ms steps(22) infinite normal;
-  animation-delay: 5s;
+  animation-delay: 1s;
 }
 
 @keyframes typewriter {
@@ -576,7 +648,7 @@ textarea:focus {
   background-size: cover;
   background-blend-mode: overlay;
   width: 100vw;
-  height: 410vh;
+  /* height: 410vh; */
   position: relative;
   font-family: Poppins;
   color: #f1f1f1;
@@ -602,14 +674,14 @@ textarea:focus {
 #table-scroll {
   text-align: center;
   animation: elementEntrance 1s ease 1 forwards;
-  width: 40%;
+  width: 60%;
   margin: 0 auto;
   background-image: radial-gradient(
     circle farthest-corner at 10% 20%,
     rgba(226, 193, 232, 0.2) 14.3%,
     rgba(229, 197, 156, 0.2) 63.7%
   );
-  border-radius: 10px 120px 10px 120px;
+  border-radius: 20px;
   padding: 15px;
 }
 
@@ -627,8 +699,15 @@ textarea:focus {
   cursor: pointer;
 }
 
+.coffee-container-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .coffee-container {
-  height: 60vh;
+  /* height: 60vh; */
   font-family: Poppins;
   display: flex;
   justify-content: space-around;
@@ -651,6 +730,8 @@ textarea:focus {
 .coffee-text {
   margin-right: 100px;
   width: 50%;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .coffee-title {
@@ -658,8 +739,8 @@ textarea:focus {
 }
 
 .coffee-img {
-  width: 400px;
-  height: 550px;
+  width: 370px;
+  height: 500px;
   border-radius: 15px;
   opacity: 0;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 1);
@@ -669,7 +750,10 @@ textarea:focus {
   display: flex;
   flex-direction: row;
   width: 300px;
+  box-sizing: border-box;
   justify-content: space-between;
+  margin-bottom: 20px;
+  /* margin-top: 50px; */
 }
 
 .coffee-specs-categories p,
@@ -692,9 +776,138 @@ textarea:focus {
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-/*TODO:
+/*Setting responsive for Desktop Computers & Laptops*/
+@media only screen and (max-device-width: 900px), (max-device-height: 500px) {
+  #loader,
+  #content,
+  #main-window-index,
+  #footer,
+  #bg-modal,
+  #about-content-bg-one,
+  #about-content-bg-two,
+  #about-content-bg-three,
+  #about-me,
+  #main-window-contact,
+  #banner,
+  #content-contact,
+  #beans-bg {
+    display: none;
+  }
+  #notfound {
+    display: block;
+  }
+}
 
+@media only screen and (max-width: 1200px) {
+  #main-window-index > img {
+    width: 100%;
+    height: 30%;
+    display: block;
+    margin: 0 auto;
+    padding-top: 100px;
+  }
+  #about-me {
+    width: 100%;
+    height: 100%;
+  }
+  #scroll-up-icon {
+    padding-left: 10px;
+  }
+  #about-me-img {
+    margin: 10px;
+  }
+  #about-me-img img {
+    width: 450px;
+    height: 450px;
+  }
+  /* #beans-bg {
+    height: 410vh;
+  } */
+  #table-scroll {
+    width: 60%;
+    border-radius: 20px;
+  }
+  .coffee-title {
+    font-size: 25px;
+  }
+  .coffee-img {
+    width: 280px;
+    height: 400px;
+  }
+}
 
-think about what to do with the social icons... facebook....twitter...
-Make more classes and delete unneeded ids! classes are better for less code repeating!
-*/
+@media only screen and (max-width: 1440px) {
+  #main-window-index > img {
+    width: 100%;
+    height: 30%;
+    display: block;
+    margin: 0 auto;
+    padding-top: 100px;
+  }
+  #about-me {
+    width: 100%;
+    height: 100%;
+  }
+  #scroll-up-icon {
+    padding-left: 10px;
+  }
+  #about-me-img {
+    margin: 10px;
+  }
+  #about-me-img img {
+    width: 500px;
+    height: 500px;
+  }
+  /* #beans-bg {
+    height: 410vh;
+  } */
+  #table-scroll {
+    width: 60%;
+    border-radius: 20px;
+  }
+  .coffee-title {
+    font-size: 25px;
+  }
+  .coffee-img {
+    width: 280px;
+    height: 400px;
+  }
+}
+
+@media only screen and (max-width: 1600px) {
+  #main-window-index > img {
+    width: 100%;
+    height: 30%;
+    display: block;
+    margin: 0 auto;
+    padding-top: 100px;
+  }
+  #about-me {
+    width: 100%;
+    height: 100%;
+  }
+  #scroll-up-icon {
+    padding-left: 10px;
+  }
+  #about-me-img {
+    margin: 10px;
+  }
+  #about-me-img img {
+    width: 500px;
+    height: 500px;
+  }
+  /* #beans-bg {
+    height: 410vh;
+  } */
+  #table-scroll {
+    width: 60%;
+    border-radius: 20px;
+  }
+  .coffee-title {
+    font-size: 25px;
+  }
+  .coffee-img {
+    width: 280px;
+    height: 400px;
+  }
+}
